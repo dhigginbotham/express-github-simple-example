@@ -30,5 +30,10 @@ app.get "/starred/:user", nav.render, scripts.embed, middle.getStars, middle.get
 app.get "/repos", nav.render, scripts.embed, middle.getUserInfo, middle.getUserRepos, routes.github
 app.get "/repos/:user", nav.render, scripts.embed, middle.getUserInfo, middle.getUserRepos, routes.github
 
+app.get "/repos/:user/:repo/:verb", nav.render, scripts.embed, middle.getUserInfo, middle.scan, routes.scan
+
 app.get "/followers", nav.render, scripts.embed, middle.getUserInfo, middle.getUserFollowers, routes.follow
 app.get "/following", nav.render, scripts.embed, middle.getUserInfo, middle.getUserFollowing, routes.follow
+
+app.get "/admin", nav.render, scripts.embed, middle.getUserInfo, middle.getCache, routes.admin
+app.post "/admin", nav.render, scripts.embed, middle.getUserInfo, middle.removeCache, middle.getCache, routes.admin

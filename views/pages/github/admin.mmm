@@ -1,0 +1,49 @@
+{{> parts/nav}}
+{{#user}}
+<div class="container clearfix">
+  <p style="font-size: 0.7em;" class="pull-right muted">Welcome back {{#user}}{{username}}{{/user}} | <a target="_blank" href="/logout">Logout</a></p>
+</div>
+{{/user}}
+
+<div class="container">
+
+  <h1><i class="icon-user"></i> Following</h1>
+  <hr>
+
+  <div class="row">
+    <div class="span3">
+        
+      {{#gitUser.cache}}
+        {{> parts/sidebar}}
+      {{/gitUser.cache}}
+      
+    </div>
+    <div class="span9">
+
+      <form method="post">
+        
+        <legend>Manage Cached Requests</legend>
+
+        {{#gitCache}}
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th colspan="2">Page</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{page}}@{{_id}}</td>
+              <td><button type="submit" class="pull-right btn btn-danger" name="remove" value="{{_id}}">Remove</button></td>
+            </tr>
+          </tbody>
+        </table>
+        {{/gitCache}}
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>

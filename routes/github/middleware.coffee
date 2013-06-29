@@ -4,6 +4,8 @@ ds = require "../../lib/cache/nedb"
 Github = require("../../lib/github").Github
 request = require("../../lib/github").request
 
+_ = require "underscore"
+
 middle = {}
 
 middle.dynamic = (req, res, next) ->
@@ -74,6 +76,30 @@ middle.getStars = (req, res, next) ->
   request req, {path: "/starred", user: req.params.user || "dhigginbotham"}, (err, git) ->
     return if err? then next err, null
     req.getStars = git
+    return next null, git
+
+middle.getCache = (req, res, next) ->
+  ds.find {}, (err, cache) ->
+    return if err? then next err, null
+    req.gitCache = cache if cache? 
+    next null, cache
+
+middle.removeCache = (req, res, next) ->
+  ds.remove _id: req.body.remove, (err) ->
+    return if err? then next err, null
+    next()
+
+middle.scan = (req, res, next) ->
+
+  request req, {path: req.url, user: false}, (err, git) ->
+    return if err? then next err, null
+
+    template = []
+    for key, val of git.cache
+      template.push {name: key, amount: val, repo: git.page}
+
+    req.scan = template
+    console.log req.scan
     return next null, git
 
 module.exports = middle

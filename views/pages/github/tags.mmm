@@ -1,0 +1,36 @@
+
+
+
+
+{{> parts/nav}}
+{{#user}}
+<div class="container clearfix">
+  <p style="font-size: 0.7em;" class="pull-right muted">Welcome back {{#user}}{{username}}{{/user}} | <a target="_blank" href="/logout">Logout</a></p>
+</div>
+{{/user}}
+
+<div class="container">
+
+  <h1><i class="icon-code-fork"></i> Languages</h1>
+  <hr>
+
+  <div class="row">
+    <div class="span3">
+        
+      {{#gitUser.cache}}
+        {{> parts/sidebar}}
+      {{/gitUser.cache}}
+      
+    </div>
+    <div class="span9">
+        <legend>Languages for {{gitScan.0.repo}}</legend>
+        <ul class="nav nav-list">
+          {{#gitScan}}
+            <li><a href="#">{{name}}</a></li>
+          {{/gitScan}}
+        </ul>
+
+    </div>
+  </div>
+
+</div>

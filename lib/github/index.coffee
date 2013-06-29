@@ -109,7 +109,7 @@ getResponse = (req, options, fn) ->
     options = {}
 
   git = new Github()
-  git.setUser (if options.user? then options.user else conf.github.username), false
+  if options.user? and options.user != false then git.setUser (if options.user? then options.user else conf.github.username), false
   git.apiPath if options.path? then options.path else ""
   git.paging req.query.page || 1
 
