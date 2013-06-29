@@ -33,6 +33,7 @@ home = require "./routes/home"
 users = require "./routes/users"
 pages = require "./routes/pages"
 github = require "./routes/github"
+coderbits = require "./lib/coderbits/app"
 
 cache = require "./lib/cache"
 
@@ -80,7 +81,7 @@ app.use home
 app.use users
 app.use pages
 app.use "/github", github
-
+app.use coderbits
 # app.use (req, res) ->
 #   res.status 404
 #   res.render "pages/404", 

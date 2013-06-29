@@ -1,0 +1,44 @@
+{{> parts/nav}}
+{{#user}}
+<div class="container clearfix">
+  <p style="font-size: 0.7em;" class="pull-right muted">Welcome back {{#user}}{{username}}{{/user}} | <a target="_blank" href="/logout">Logout</a></p>
+</div>
+{{/user}}
+
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th colspan="3">Coderbits</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#coderbits.cache}}
+      <tr>
+        <td>{{name}}</td>
+        <td>{{title}}</td>
+        <td>{{rank}}</td>
+      </tr>
+      {{/coderbits.cache}}
+    </tbody>
+  </table>
+  <div  style="text-align: center;"><canvas id="canvas1" height="450" width="450"></canvas></div>
+  <script>
+    var data = [];
+    var colors = ["#F38630", "#E0E4CC", "#69D2E7","#F38630", "#E0E4CC", "#69D2E7"];
+    var count = [];
+    {{#coderbits.cache.top_skills}}
+    count.push({{count}});
+    {{/coderbits.cache.top_skills}}
+
+    for (var i=0;i<count.length;++i) {
+      data.push({value: count[i], color: colors[i]});
+    }
+
+
+  var myPie = new Chart(document.getElementById("canvas1").getContext("2d")).Pie(data);
+
+  </script>
+
+
+</div>

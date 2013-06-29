@@ -12,6 +12,7 @@ scripts = module.exports =
     {src: '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js', name: 'jquery.js', where: 'foot', uri: null, type: 'js', exclude: null}
     {src: '//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js', name: 'bootstrap.js', where: 'foot', uri: null, type: 'js', exclude: null}
     {src: 'http://cdn.sockjs.org/sockjs-0.3.min.js', name: 'sockjs.js', where: 'head', uri: null, type: 'js', exclude: null}
+    {src: '/js/vendor/chartjs/chart.min.js', name: 'chart.min.js', where: 'head', uri: null, type: 'js', exclude: null}
     {src: '/js/vendor/pjax/jquery.pjax.js', name: 'jquery.pjax.js', where: 'foot', uri: null, type: 'js', exclude: null}
     {src: '/js/vendor/prettyprint/prettyprint.js', name: 'prettyprint.js', where: 'foot', uri: null, type: 'js', exclude: null}
     {src: '/js/vendor/prettyprint/prettify.css', name: 'prettify.css', where: 'head', uri: null, type: 'css', exclude: null}

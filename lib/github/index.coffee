@@ -3,7 +3,7 @@ _ = require "underscore"
 
 helpers = require "../../conf/helpers"
 conf = require "../../conf"
-ds = require "../cache/nedb"
+cache = require "../cache/crud"
 
 ### Surf github API ###
 Github = (opts) ->
@@ -63,45 +63,6 @@ Github::request = (options, fn) ->
       when 200 then fn null, body if body
       else fn JSON.stringify err: "Unhandled response code from Github API", code: resp.statusCode, null
 
-
-
-
-
-
-
-cache = (req, opts) ->
-
-  if typeof opts == "undefined" then opts = {}
-
-  @stale = if opts.stale? then opts.stale else 600
-  @page = if opts.page? then opts.page else req.url
-
-  @
-
-cache::setCache = (cache) ->
-  @cache = cache
-
-cache::paginate = (page) ->
-  @paginate = new helpers.paginate page
-
-cache::findCache = (page, fn) ->
-  ds.find page: page, (err, cache) ->
-    return if err? fn err, null
-    console.log "found cache for #{page}"
-    fn null, cache if cache?
-
-cache::addCache = (cache, fn) ->
-  ds.insert cache, (err, cache) ->
-    return if err? fn err, null
-    console.log "inserting cache for #{cache.page}"
-    fn null, cache if cache?
-
-cache::removeCache = (id, fn) ->
-  ds.remove _id: id, (err) ->
-    return if err? fn err, null
-    console.log "removing cache for #{id}"
-    fn null, "removed"
-
 getResponse = (req, options, fn) ->
   
   if _.isFunction options
@@ -111,9 +72,9 @@ getResponse = (req, options, fn) ->
   git = new Github()
   if options.user? and options.user != false then git.setUser (if options.user? then options.user else conf.github.username), false
   git.apiPath if options.path? then options.path else ""
-  git.paging req.query.page || 1
 
   __cache = new cache req
+  git.paging req.query.page || 1
 
   # prolly turn this into a switch statement
   if options.path == "" then __cache.page = "/user"

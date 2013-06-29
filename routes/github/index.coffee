@@ -5,7 +5,6 @@ flash = require "connect-flash"
 fs = require "fs"
 path = require "path"
 
-middle = require "./middleware"
 routes = require "./routes"
 
 scripts = require "../../lib/assets"
@@ -13,6 +12,7 @@ nav = require "../../lib/menus"
 conf = require "../../conf"
 
 github = require "../../lib/github"
+middle = require "../../lib/github/middleware"
 
 _views = path.join __dirname, "..", "..", "views"
 

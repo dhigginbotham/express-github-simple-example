@@ -1,5 +1,3 @@
-md = require("node-markdown").Markdown
-
 routes = {}
 
 routes.github = (req, res) ->

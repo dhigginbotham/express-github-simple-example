@@ -5,14 +5,13 @@ flash = require "connect-flash"
 fs = require "fs"
 path = require "path"
 
-middle = require "../../lib/github/middleware"
 routes = require "./routes"
 
-
-
-scripts = require "../../lib/assets"
-nav = require "../../lib/menus"
+scripts = require "../assets"
+nav = require "../menus"
 conf = require "../../conf"
+
+github = require "../github"
 
 _views = path.join __dirname, "..", "..", "views"
 
@@ -20,5 +19,10 @@ app.set "views", _views
 app.set "view engine", "mmm"
 app.set "layout", "layout"
 
+coderbits = require "./index"
+
 # default or home route
-app.get "/", nav.render, scripts.embed, middle.getUserInfo, routes.homePage
+app.get "/coderbits", (req, res) ->
+  return res.redirect "/coderbits/profile"
+
+app.get "/coderbits/profile", nav.render, scripts.embed, coderbits.middleware, routes.coderbits
