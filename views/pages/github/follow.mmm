@@ -27,7 +27,7 @@
             <img src="http://www.gravatar.com/avatar/{{gravatar_id}}?s=200" alt="{{login}}"  class="img-rounded" width="100%">
             <div class="caption">
               <h5><a href="/github/repos/{{login}}">{{login}}</a></h5>
-              <p><a target="_blank" href="{{html_url}}" class="btn btn-primary">View Github</a></p>
+              <p><a target="_blank" href="{{html_url}}" class="btn btn-primary">View Github</a> <a href="/github/starred/{{login}}" class="btn">View Starred</a></p>
             </div>
           </div>
         </li>

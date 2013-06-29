@@ -1,7 +1,7 @@
 {
   "name": "express-github-simple-example",
   "description": "just an easy github api viewer with interest in being a resume",
-  "version": "0.0.1-20",
+  "version": "0.0.1-21",
   "license": "MIT",
   "author": "David Higginbotham <davehigginbotham@gmail.com>",
   "dependencies": {

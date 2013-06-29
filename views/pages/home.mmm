@@ -7,11 +7,39 @@
 
 <div class="container">
 
-<div class="jumbotron">
-  <a class="btn" href="/github/followers">Followers</a> 
-  <a class="btn" href="/github/following">Following</a> 
-  <a class="btn btn-info" href="/github/repos">Repositories</a> 
-  <a class="btn btn-info" href="/github/starred">Starred</a> 
+
+<hr>
+
+<div class="hero-unit">
+  <h1>GitResume</h1>
+  <p>Want an easy github surfer? Try out these quick tools below:</p>
+  <div class="well">
+    <a class="btn" href="/github/followers"><i class="icon-github-sign"></i> Followers</a> 
+    <a class="btn" href="/github/following"><i class="icon-github-sign"></i> Following</a> 
+    <a class="btn btn-inverse" href="/github/repos"><i class="icon-code"></i> Own Repositories</a> 
+    <a class="btn btn-inverse" href="/github/repos/visionmedia"><i class="icon-code"></i>User Repositories</a> 
+    <a class="btn btn-primary" href="/github/starred"><i class="icon-star"></i> Own Starred</a> 
+    <a class="btn btn-primary" href="/github/starred/visionmedia"><i class="icon-star"></i> User Starred</a> 
+  </div>
+</div>
+
+<div class="marketing">
+  <div class="row">
+    <div class="span4">
+      <legend><i class="icon-dashboard" style="color: rgb(221, 221, 221); font-size: 30px;"></i> Easy Setup</legend>
+      <p>If you're trying to change the default user: <pre class="prettyprint">checkout /conf/index.coffee</pre></p>
+    </div>
+    <div class="span4">
+      <legend><i class="icon-dashboard" style="color: rgb(221, 221, 221); font-size: 30px;"></i> View Other Repos/Stars</legend>
+      <p>easily use the server to do <pre class="prettyprint">/repos/:username or /starred/:username</pre></p>      
+    </div>
+    <div class="span4">
+      <legend><i class="icon-dashboard" style="color: rgb(221, 221, 221); font-size: 30px;"></i> More to come!</legend>
+      <p>
+        Don't get hung up on lack of features, I'm gonna make this pretty cool
+      </p>      
+    </div>
+  </div>
 </div>
 
 </div>

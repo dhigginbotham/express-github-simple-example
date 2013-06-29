@@ -50,16 +50,9 @@ middle.getUserInfo = (req, res, next) ->
 
 middle.getUserRepos = (req, res, next) ->
   
-  request req, {path: "/repos", user: "dhigginbotham"}, (err, git) ->
+  request req, {path: "/repos", user: req.params.user || "dhigginbotham"}, (err, git) ->
     return if err? then next err, null
     req.getUserRepos = git
-    return next null, git
-
-middle.getUsersRepos = (req, res, next) ->
-  
-  request req, {path: "/repos", user: req.params.user}, (err, git) ->
-    return if err? then next err, null
-    req.getUsersRepos = git
     return next null, git
 
 middle.getUserFollowers = (req, res, next) ->
@@ -78,7 +71,7 @@ middle.getUserFollowing = (req, res, next) ->
 
 middle.getStars = (req, res, next) ->
 
-  request req, {path: "/starred", user: "dhigginbotham"}, (err, git) ->
+  request req, {path: "/starred", user: req.params.user || "dhigginbotham"}, (err, git) ->
     return if err? then next err, null
     req.getStars = git
     return next null, git

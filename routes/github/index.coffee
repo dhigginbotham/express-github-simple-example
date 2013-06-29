@@ -23,9 +23,12 @@ app.set "layout", "layout"
 # default or home route
 app.get "/", (req, res) ->
   return res.redirect "/github/starred"
+
 app.get "/starred", nav.render, scripts.embed, middle.getStars, middle.getUserInfo, routes.github
+app.get "/starred/:user", nav.render, scripts.embed, middle.getStars, middle.getUserInfo, routes.github
 
 app.get "/repos", nav.render, scripts.embed, middle.getUserInfo, middle.getUserRepos, routes.github
-app.get "/repos/:user", nav.render, scripts.embed, middle.getUserInfo, middle.getUsersRepos, routes.github
+app.get "/repos/:user", nav.render, scripts.embed, middle.getUserInfo, middle.getUserRepos, routes.github
+
 app.get "/followers", nav.render, scripts.embed, middle.getUserInfo, middle.getUserFollowers, routes.follow
 app.get "/following", nav.render, scripts.embed, middle.getUserInfo, middle.getUserFollowing, routes.follow
