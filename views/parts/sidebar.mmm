@@ -1,5 +1,4 @@
-<div class="well">
-  <img src="http://www.gravatar.com/avatar/{{gravatar_id}}?s=250" alt="{{login}}" class="img-rounded">
+  <img src="http://www.gravatar.com/avatar/{{gravatar_id}}?s=239" alt="{{login}}" class="img-rounded">
   <hr>
   <h4>{{name}}</h4>
   <h5 class="muted"><a href="{{html_url}}">@{{login}}</a></h5>
@@ -16,4 +15,3 @@
     <li><a href="/github/followers">Followers: {{followers}}</a></li>
     <li><a href="/github/following">Following: {{following}}</a></li>
   </ul>
-</div>

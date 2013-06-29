@@ -8,5 +8,6 @@ routes.homePage = (req, res) ->
   que: req.loaded
   user: req.user
   github: req.Github
+  gitUser: req.getUserInfo
 
 module.exports = routes

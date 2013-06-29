@@ -14,9 +14,11 @@
   <div class="row">
     <div class="span3">
         
-      {{#gitUser.cache}}
-        {{>parts/sidebar}}
-      {{/gitUser.cache}}
+      {{! <div class="well"> }}
+        {{#gitUser.cache}}
+          {{> parts/sidebar}}
+        {{/gitUser.cache}}
+      {{! </div> }}
       
     </div>
     <div class="span9">
@@ -37,8 +39,8 @@
             <td><h4><a target="_blank" href="{{html_url}}"><i class="icon-github"></i> {{name}}</a></h4></td>
             <td><a target="_blank" href="{{owner.url}}" title="{{owner.login}}"><p><img src="{{owner.avatar_url}}" width="24px" alt="{{owner.login}}" class="img-circle"> {{owner.login}}</p></a></td>
             <td>{{language}}</td>
-            <td><a target="_blank" href="{{html_url}}" class="btn btn-primary"><i class="icon-code-fork"></i> {{forks}}</a></td>
-            <td><a target="_blank" href="{{html_url}}" class="btn btn-info"><i class="icon-star"></i> {{watchers}}</a></td>
+            <td><a target="_blank" href="{{html_url}}" class="btn btn-block btn-primary"><i class="icon-code-fork"></i> {{forks}}</a></td>
+            <td><a target="_blank" href="{{html_url}}" class="btn btn-block btn-info"><i class="icon-star"></i> {{watchers}}</a></td>
           </tr>
           <tr>
             <td colspan="5">
