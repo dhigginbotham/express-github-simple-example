@@ -21,12 +21,12 @@
     <div class="jumbotron">
       <h1>GitResume</h1>
       <p>Want an easy github surfer? Try out these quick tools below:</p>
-      <a class="badge" href="/github/followers"><i class="icon-github-sign"></i> Followers</a> 
-      <a class="badge" href="/github/following"><i class="icon-github-sign"></i> Following</a> 
-      <a class="badge badge-inverse" href="/github/repos"><i class="icon-code"></i> Own Repositories</a> 
-      <a class="badge badge-inverse" href="/github/repos/visionmedia"><i class="icon-code"></i>User Repositories</a> 
-      <a class="badge badge-info" href="/github/starred"><i class="icon-star"></i> Own Starred</a> 
-      <a class="badge badge-info" href="/github/starred/visionmedia"><i class="icon-star"></i> User Starred</a> 
+      <a class="label" href="/github/followers"><i class="icon-github-sign"></i> Followers</a> 
+      <a class="label" href="/github/following"><i class="icon-github-sign"></i> Following</a> 
+      <a class="label label-inverse" href="/github/repos"><i class="icon-code"></i> Own Repositories</a> 
+      <a class="label label-inverse" href="/github/repos/visionmedia"><i class="icon-code"></i>User Repositories</a> 
+      <a class="label label-info" href="/github/starred"><i class="icon-star"></i> Own Starred</a> 
+      <a class="label label-info" href="/github/starred/visionmedia"><i class="icon-star"></i> User Starred</a> 
     </div>
     <div class="marketing">
       <legend>Welcome to this thingy</legend>
@@ -38,14 +38,16 @@
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </p>
-      <hr>
-      <div class="span4">
-        <legend><i class="icon-dashboard" style="color: rgb(221, 221, 221); font-size: 30px;"></i> Easy Setup</legend>
-        <p>If you're trying to change the default user: <pre class="prettyprint">checkout /conf/index.coffee</pre></p>
-      </div>
-      <div class="span4">
-        <legend><i class="icon-dashboard" style="color: rgb(221, 221, 221); font-size: 30px;"></i> View Other Repos/Stars</legend>
-        <p>easily use the server to do <pre class="prettyprint">/repos/:username or /starred/:username</pre></p>      
+      <br>
+      <div class="row-fluid">
+        <div class="span6">
+          <legend><i class="icon-dashboard" style="color: rgb(221, 221, 221); font-size: 30px;"></i> Easy Setup</legend>
+          <p>If you're trying to change the default user: <pre class="prettyprint">checkout /conf/index.coffee</pre></p>
+        </div>
+        <div class="span6">
+          <legend><i class="icon-dashboard" style="color: rgb(221, 221, 221); font-size: 30px;"></i> View Other Repos/Stars</legend>
+          <p>easily use the server to do <pre class="prettyprint">/repos/:username or /starred/:username</pre></p>      
+        </div>
       </div>
     </div>
   </div>
