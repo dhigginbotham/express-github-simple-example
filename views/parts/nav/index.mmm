@@ -1,0 +1,26 @@
+<div class="navbar navbar-inverse navbar-static-top navbar-bottom-margin">
+  <div class="navbar-inner">
+    <div class="container">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="brand active" href="#">GitResume</a>
+      <div class="nav-collapse collapse">
+        <ul class="nav pull-right">
+        {{#nav}}
+          <li{{#cur}} class="active"{{/cur}}>
+            <a href="{{href}}" id="navigation-{{id}}">{{#icon}}<i class="icon-{{icon}}"></i> {{/icon}}{{std}}</a>
+          </li>
+          <li class="divider-vertical"></li>
+        {{/nav}}
+        {{^nav}}<li><a href="/login">Login</a></li>{{/nav}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  {{>parts/flash}}
+</div>

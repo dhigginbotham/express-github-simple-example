@@ -1,0 +1,16 @@
+{{> parts/nav}}
+
+{{#pages}}
+  
+  <div class="container">
+    <legend>
+      {{title}}
+    </legend>
+    <div class="row">
+      <div class="span12" style="min-height: 700px;">
+        {{{content}}}
+      </div>    
+    </div>
+  </div>
+
+{{/pages}}

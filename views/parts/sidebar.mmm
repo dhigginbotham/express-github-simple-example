@@ -1,0 +1,19 @@
+<div class="">
+  <img src="http://www.gravatar.com/avatar/{{gravatar_id}}?s=250" alt="{{login}}" class="thumbnail">
+  <hr>
+  <h4>{{name}}</h4>
+  <h5 class="muted">{{login}}</h5>
+
+  <ul class="nav nav-list">
+    <li class="nav-header">Personal Info</li>
+    <li><a href="{{html_url}}"><i class="icon-globe"></i> Location: {{location}}</a></li>
+    <li><a href="{{html_url}}">Hireable: {{hireable}}</a></li>
+  </ul>
+  
+  <ul class="nav nav-list">
+    <li class="nav-header">Github Stats</li>
+    <li><a href="/github/repos">Public Repos: {{public_repos}}</a></li>
+    <li><a href="/github/followers">Followers: {{followers}}</a></li>
+    <li><a href="/github/following">Following: {{following}}</a></li>
+  </ul>
+</div>

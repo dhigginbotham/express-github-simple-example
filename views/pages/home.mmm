@@ -1,0 +1,17 @@
+{{> parts/nav}}
+{{#user}}
+<div class="container clearfix">
+  <p style="font-size: 0.7em;" class="pull-right muted">Welcome back {{#user}}{{username}}{{/user}} | <a href="/logout">Logout</a></p>
+</div>
+{{/user}}
+
+<div class="container">
+
+<div class="jumbotron">
+  <a class="btn" href="/github/followers">Followers</a> 
+  <a class="btn" href="/github/following">Following</a> 
+  <a class="btn btn-info" href="/github/repos">Repositories</a> 
+  <a class="btn btn-info" href="/github/starred">Starred</a> 
+</div>
+
+</div>

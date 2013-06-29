@@ -1,0 +1,37 @@
+<div class="pagination">
+  <ul>
+    <li><a {{#pagination.page.isCurrent}}class="disabled active" {{/pagination.page.isCurrent}} href="/{{prefix}}/view/{{page}}">«</a></li>
+    {{#pages}}
+      {{#isFirst}}<li><a {{#isCurrent}}class="disabled active" {{/isCurrent}} href="/{{prefix}}/view/{{page}}">{{page}}</a></li>{{/isFirst}}
+      {{#isLast}}{{^isFirst}}<li><a {{#isCurrent}}class="disabled active" {{/isCurrent}} href="/{{prefix}}/view/{{page}}">{{page}}</a></li>{{/isFirst}}{{/isLast}}
+      {{^isInner}}{{^isFirst}}{{^isLast}}{{^isCurrent}}<li><a {{#isCurrent}}class="disabled active" {{/isCurrent}} href="/{{prefix}}/view/{{page}}">{{page}}</a></li>{{/isCurrent}}{{/isLast}}{{/isFirst}}{{/isInner}}
+      {{^isInner}}{{#isSeparator}}{{^isFirst}}{{^isLast}}{{^isCurrent}}<li><a {{#isCurrent}}class="disabled active" {{/isCurrent}} href="/{{prefix}}/view/{{page}}">...</a></li>{{/isCurrent}}{{/isLast}}{{/isFirst}}{{/isSeparator}}{{/isInner}}
+      {{#isLast}}<li><a {{#isCurrent}}class="disabled active" {{/isCurrent}} href="/{{prefix}}/view/{{page}}">»</a></li>{{/isLast}}
+    {{/pages}}
+  </ul>
+</div>
+
+{{! { pages:
+   [ { page: 1,
+       isFirst: true,
+       isLast: false,
+       isCurrent: true,
+       isPrevious: false,
+       isNext: false,
+       inLeftOuter: true,
+       inRightOuter: false,
+       inInner: true,
+       isSeparator: false,
+       nextPage: [Object] },
+     { page: 2,
+       isFirst: false,
+       isLast: true,
+       isCurrent: false,
+       isPrevious: false,
+       isNext: true,
+       inLeftOuter: false,
+       inRightOuter: true,
+       inInner: true,
+       isSeparator: false,
+       previousPage: [Object] } ],
+  render: [Function: render] } }}

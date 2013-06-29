@@ -1,0 +1,64 @@
+body {
+  padding-bottom: 40px;
+  background: #fff url('/img/cream_dust.png') repeat;
+}
+
+.container .hero-unit {
+  /*background: url('/img/squairy_light.png');*/
+  background: rgb(105, 181, 211);
+  color: #f1f1f1;
+}
+
+.container .hero-unit h1 {
+  color: white;
+}
+.container .hero-unit p > a {
+  color: rgb(58, 103, 124);
+}
+
+/* Custom container */
+.container-narrow {
+  margin: 0 auto;
+  max-width: 700px;
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+.jumbotron {
+border-radius: 8px;
+box-shadow: inset 0px 0px 3px rgba(0,0,0,0.2);
+padding: 20px;
+margin: 30px 0;
+text-align: center;
+background: rgba(0,0,0,0.1);
+}
+
+.jumbotron h1 {
+  font-size: 72px;
+  line-height: 1;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 60px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+.navbar-bottom-margin {
+  margin-bottom: 20px;
+}
+
+.row .control-group label {
+  font-weight: 700;
+}
+
+p.muted.small {
+  font-size: 11px;
+}

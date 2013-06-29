@@ -1,0 +1,57 @@
+{{> parts/nav}}
+<div class="container">
+
+{{#edit}}
+  <legend><i class="icon-magic"></i> Edit {{title}}</legend>
+{{/edit}}
+{{^edit}}
+  <legend><i class="icon-magic"></i> Add Page</legend>
+{{/edit}}
+
+    <form method="post" enctype="multipart/form-data" id="appsForm">
+
+      <div class="row">
+      {{! page title }}
+        <div class="control-group span12">
+          <label for="control-label">Page Title</label>
+          <div class="controls">
+            <input type="text" id="page_title" class="input input-block-level" name="page_title"{{#edit}} value="{{title}}"{{/edit}} data-validation-required-message="Your page needs a title" required/>
+            <p class="help-block"></p>
+          </div>
+        </div>
+      {{! /page title }}
+      </div>
+
+      <div class="row">
+      {{! page slug }}
+        <div class="control-group span12">
+          <label for="control-label">Slug</label>
+          <div class="controls">
+            <input type="text" id="page_slug" class="input input-block-level" name="page_slug"{{#edit}} value="{{slug}}"{{/edit}} data-validation-required-message="Your page needs a slug" required/>
+            <p class="help-block"></p>
+          </div>
+        </div>
+      {{! /page slug }}
+      </div>
+
+      <div class="row">
+      {{! page content }}
+        <div class="control-group span12">
+          <label for="control-label">Page Content</label>
+          <div class="controls">
+            <textarea name="pages_content" id="pages_content" style="height: 150px; width: 100%;">{{{edit.content}}}</textarea>
+            <p class="help-block"></p>
+          </div>
+        </div>
+      {{! /page content }}
+      </div>
+
+      <hr>
+      <div class="form-actions">
+        {{#edit}}<button type="submit" class="btn btn-primary" data-loading-text="Updating..."><i class="icon-ok"></i> Update Page</button>{{/edit}}
+        {{^edit}}<button type="submit" class="btn btn-primary" data-loading-text="Adding..."><i class="icon-ok"></i> Add Page</button>{{/edit}}
+      </div>
+
+    </form>
+</div>
+

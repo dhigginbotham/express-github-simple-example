@@ -1,0 +1,49 @@
+{
+  "name": "mgive-text2screen",
+  "description": "text2screen microapp, built to spec",
+  "version": "0.0.1",
+  "license": "GPL",
+  "author": "David Higginbotham <davehigginbotham@gmail.com>",
+  "dependencies": {
+    "express": "3.0.3",
+    "mmm": "0.2.x",
+    "mongoose": "3.6.x",
+    "supergoose": "latest",
+    "moment": "latest",
+    "cluster": "latest",
+    "log": "latest",
+    "sockjs": "0.3.x",
+    "nedb":"latest",
+    "connect-nedb-session":"latest",
+    "mkdirp": ">= 0.3.5",
+    "hoek": ">= 0.9.1",
+    "underscore": ">= 1.4.4",
+    "connect-flash": "0.1.0",
+    "express-restify-mongoose": "latest",
+    "connect-roles": "2.0.x",
+    "node-markdown": "latest",
+    "session-mongoose": "latest",
+    "passport": "0.1.x",
+    "passport-local": "0.1.6",
+    "passport-facebook": ">= 0.0.0",
+    "bcrypt": "0.7.5",
+    "paginate": "0.1.x",
+    "express-form": "0.8.x",
+    "request": "2.20.x"
+  },
+  "devDependencies": {
+    "coffee-script": ">= 1.3.3",
+    "grunt-cli": "latest",
+    "colors": "latest",
+    "mocha": "latest",
+    "expect.js": "latest",
+    "zombie": "latest"
+  },
+  "engines": {
+    "node": "0.8.x"
+  },
+  "subdomain": "text2screen",
+  "scripts": {
+    "start": "coffee server.coffee"
+  }
+}

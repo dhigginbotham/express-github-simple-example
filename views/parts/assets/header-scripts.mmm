@@ -1,0 +1,3 @@
+<!-- //header-scripts -->
+{{#que.head.js}}<script src="{{src}}"></script><!-- ^- {{name}} -->{{/que.head.js}}
+{{#que.head.css}}<link href="{{src}}" rel="stylesheet"><!-- ^- {{name}} -->{{/que.head.css}}

@@ -1,0 +1,23 @@
+{{> parts/nav}}
+<div class="container">
+  <form method="post">
+  {{> parts/flash}}
+  <legend>Login</legend>
+  <div class="row">
+    <div class="span3">
+      <p><label for="username" id="username">Username: </label><input type="text" class="span3" name="username" placeholder="Username" /></p>
+      <p><label for="password" id="password">Password: </label><input type="password" class="span3" name="password" placeholder="Password" /></p>
+      <hr>
+      <p><button class="btn btn-info btn-block" type="submit" id="login">Login</button>&nbsp;</p>
+    </div>
+    </form>
+    <div class="pull-right">
+      <div class="well well-large" style="text-align: center;">
+        <p class="lead">Sign in with Facebook</p>
+        <p class="muted" style="font-size: 96px;"><i class="icon-facebook"></i></p>
+        <hr>
+        <p><a href="/auth/facebook" class="btn btn-primary btn-block"><i class="icon-facebook-sign"></i> Sign on through Facebook</a></p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+{{> parts/nav}}
+{{#user}}
+<div class="container clearfix">
+  <p style="font-size: 0.7em;" class="pull-right muted">Welcome back {{#user}}{{username}}{{/user}} | <a target="_blank" href="/logout">Logout</a></p>
+</div>
+{{/user}}
+
+<div class="container">
+
+  <h1><i class="icon-user"></i> Following</h1>
+  <hr>
+
+  <div class="row">
+    <div class="span3">
+        
+      {{#gitUser.cache}}
+        {{> parts/sidebar}}
+      {{/gitUser.cache}}
+      
+    </div>
+    <div class="span9">
+
+      <ul class="thumbnails">
+      {{#gitView.cache}}
+        <li class="span3">
+          <div class="thumbnail" style="min-height: 100px">
+            <img src="http://www.gravatar.com/avatar/{{gravatar_id}}?s=200" alt="{{login}}"  class="img-rounded" width="100%">
+            <div class="caption">
+              <h5><a href="/github/repos/{{login}}">{{login}}</a></h5>
+              <p><a target="_blank" href="{{html_url}}" class="btn btn-primary">View Github</a></p>
+            </div>
+          </div>
+        </li>
+      {{/gitView.cache}}
+      </ul>
+
+    </div>
+  </div>
+
+</div>

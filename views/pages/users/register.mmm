@@ -1,0 +1,65 @@
+{{> parts/nav}}
+
+<div class="container">
+{{> parts/flash}}
+
+  <form method="post">
+    <fieldset>
+      <legend><i class="icon-signin"></i> {{title}}</legend>
+        {{#edit}}
+        <p>Username: {{username}}</p>
+        <br>
+        {{/edit}}
+        {{^edit}}
+          <div class="input-append">
+            <label for="username">Username: </label>
+            <input class="span3 disabled" style="max-width: 100%; display: inline-block;" id="appendedInput" type="text" name="username">
+            <span class="add-on"><i class="icon-asterisk"></i> </span>
+          </div>
+          <br>
+          <div class="input-append">
+            <label for="password">Password: </label>
+            <input class="span3" style="max-width: 100%; display: inline-block;" id="appendedInput" type="password" name="password">
+            <span class="add-on"><i class="icon-asterisk"></i> </span>
+          </div>
+          <br>
+        {{/edit}}
+        <div class="input-append">
+          <label for="email">Email: </label>
+          <input class="span3" style="max-width: 100%; display: inline-block;" id="appendedInput" type="text" name="email"{{#edit}} value="{{email}}"{{/edit}}>
+          <span class="add-on"><i class="icon-asterisk"></i> </span>
+        </div>
+        <br>
+        <label for="first_name">First Name: </label>
+        <input type="text" class="span3" style="max-width: 100%; display: inline-block;" name="first_name" {{#edit}}value="{{first_name}}"{{/edit}}>
+        <br>
+        <label for="last_name">Last Name: </label>
+        <input type="text" class="span3" style="max-width: 100%; display: inline-block;" name="last_name" {{#edit}}value="{{last_name}}"{{/edit}}>
+        <br>
+        <label for="zip">Zip: </label>
+        <input type="text" class="span3" style="max-width: 100%; display: inline-block;" name="zip" id="zip" {{#edit}}value="{{zip}}"{{/edit}}>
+        <br>
+        <label for="phone">Phone: </label>
+        <input type="text" class="span3" style="max-width: 100%; display: inline-block;" name="phone" id="phone" {{#edit}}value="{{phone}}"{{/edit}}>
+        <hr>
+        <label class="checkbox">
+          <input type="checkbox" name="verifiedTxtMsg" {{#edit}}{{#verifiedTxtMsg}} checked{{/verifiedTxtMsg}}{{/edit}}> Would you like to opt-in and receive future messages? 
+        </label>
+        <p><i class="icon-asterisk"></i> indicates required field</p>
+        {{#user.admin}}
+          <hr>
+          <label class="checkbox">
+            <input type="checkbox" name="is_admin" id="is_editor" {{#edit}}{{#admin}} checked{{/admin}}{{/edit}}> Make user an admin?
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" name="is_editor" id="is_editor"> Make user an editor? 
+          </label>
+        {{/user.admin}}
+        <div class="form-actions">
+          <button type="submit" id="signupUser" class="btn btn-info">{{submit}}</button>
+          <a href="/apps/view" type="button" class="btn">Cancel</a>
+        </div>
+    </fieldset>
+  </form>
+
+</div> {{!/container }}

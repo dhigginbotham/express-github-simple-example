@@ -1,0 +1,31 @@
+{{> parts/nav}}
+<div class="container">
+  <legend>
+    View Pages
+  </legend>
+  {{#pages}}
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>{{title}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <a href="/pages/{{slug}}" class="btn btn-primary btn-small">View</a>
+          {{#user.admin}}<a href="/pages/{{slug}}/edit" class="btn btn-primary btn-small">Edit</a>{{/user.admin}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  {{/pages}}
+  {{^pages}}
+    <div class="alert alert-info">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <h5>Whoa! No Pages found</h5>
+      <p>You need to add some pages to view them..</p>
+    </div>
+  {{/pages}}
+</div>
