@@ -4,7 +4,7 @@ NavLoader = module.exports =
       {std : null, id : 'welcome', icon : 'home', cur : null, href : '/', token : null}
       {std : 'Repos', id : 'view-repos', icon : 'code', cur : null, href : '/github/repos', token : null}
       {std : 'Starred Repos', id : 'view-starred', icon : 'star', cur : null, href : '/github/starred', token : null}
-      {std : 'Logout', id : 'logout', icon : null, cur : null, href : '/logout', token : null}
+      {std : null, id : 'logout', icon : 'signout', cur : null, href : '/logout', token : null}
     ]
 
     noauth: [
@@ -16,11 +16,11 @@ NavLoader = module.exports =
 
     admin: [
       {std : null, id : 'welcome', icon : 'home', cur : null, href : '/', token : null}
-      {std : 'View Pages', id : 'view-pages', icon : null, cur : null, href : '/pages/view', token : null}
-      {std : 'Add Page', id : 'add-pages', icon : null, cur : null, href : '/pages/add', token : null}
+      {std : null, id : 'add-pages', icon : 'plus', cur : null, href : '/pages/add', token : null}
+      {std : 'Blog', id : 'view-blog', icon : null, cur : null, href : '/pages/view', token : null}
       {std : 'Repos', id : 'view-repos', icon : 'code', cur : null, href : '/github/repos', token : null}
       {std : 'Starred Repos', id : 'view-starred', icon : 'star', cur : null, href : '/github/starred', token : null}
-      {std : 'Logout', id : 'logout', icon : null, cur : null, href : '/logout', token : null}
+      {std : null, id : 'logout', icon : 'signout', cur : null, href : '/logout', token : null}
     ]
   
   render: (req, res, next) ->

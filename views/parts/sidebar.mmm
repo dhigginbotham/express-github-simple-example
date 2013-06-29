@@ -6,7 +6,7 @@
   <ul class="nav nav-list">
     <li class="nav-header">Personal Info</li>
     <li><a href="{{html_url}}"><i class="icon-globe"></i> Location: {{location}}</a></li>
-    <li><a href="{{html_url}}">Hireable: {{hireable}}</a></li>
+    <li><a href="{{html_url}}">Hireable: {{#hireable}} <i class="icon-smile"></i> Indeed{{/hireable}}</a></li>
   </ul>
   
   <ul class="nav nav-list">
