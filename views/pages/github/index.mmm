@@ -8,8 +8,6 @@
 <div class="container">
 
   {{^isFirst}}<a href="?page=1" class="pull-right">Most Recent</a>{{/isFirst}}
-  <h1 style="color: #005580;"><i class="icon-user"></i> {{gitUser.cache.name}}</h1>
-  <hr>
 
   <div class="row">
     <div class="span3">

@@ -6,10 +6,6 @@
 {{/user}}
 
 <div class="container">
-
-  <h1><i class="icon-user"></i> Following</h1>
-  <hr>
-
   <div class="row">
     <div class="span3">
         

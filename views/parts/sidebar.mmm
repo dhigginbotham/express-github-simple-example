@@ -11,7 +11,7 @@
   
   <ul class="nav nav-list">
     <li class="nav-header">Github Stats</li>
-    <li><a href="/github/repos">Public Repos: {{public_repos}}</a></li>
-    <li><a href="/github/followers">Followers: {{followers}}</a></li>
-    <li><a href="/github/following">Following: {{following}}</a></li>
+    <li><a href="/github/repos"><i class="icon-code-fork"></i> Public Repos: {{public_repos}}</a></li>
+    <li><a href="/github/followers"><i class="icon-star"></i> Followers: {{followers}}</a></li>
+    <li><a href="/github/following"><i class="icon-thumbs-up"></i> Following: {{following}}</a></li>
   </ul>

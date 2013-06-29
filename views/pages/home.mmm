@@ -7,8 +7,6 @@
 
 <div class="container">
 
-  <h1>Welcome!</h1>
-  <hr>
 
   <div class="row">
     <div class="span3">
@@ -18,7 +16,8 @@
     </div>
     <div class="span9">
 
-    <div class="jumbotron">
+    <div class="alert alert-info">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
       <h1>GitResume</h1>
       <p>Want an easy github surfer? Try out these quick tools below:</p>
       <a class="label" href="/github/followers"><i class="icon-github-sign"></i> Followers</a> 
@@ -28,7 +27,6 @@
       <a class="label label-info" href="/github/starred"><i class="icon-star"></i> Own Starred</a> 
       <a class="label label-info" href="/github/starred/visionmedia"><i class="icon-star"></i> User Starred</a> 
     </div>
-    <div class="marketing">
       <legend>Welcome to this thingy</legend>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -39,13 +37,14 @@
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </p>
       <br>
+    <div class="marketing">
       <div class="row-fluid">
         <div class="span6">
-          <legend><i class="icon-dashboard" style="color: rgb(221, 221, 221); font-size: 30px;"></i> Easy Setup</legend>
+          <legend><i class="icon-rocket" style="color: rgb(221, 221, 221); font-size: 30px;"></i> Easy Setup</legend>
           <p>If you're trying to change the default user: <pre class="prettyprint">checkout /conf/index.coffee</pre></p>
         </div>
         <div class="span6">
-          <legend><i class="icon-dashboard" style="color: rgb(221, 221, 221); font-size: 30px;"></i> View Other Repos/Stars</legend>
+          <legend><i class="icon-code" style="color: rgb(221, 221, 221); font-size: 30px;"></i> View Other Repos/Stars</legend>
           <p>easily use the server to do <pre class="prettyprint">/repos/:username or /starred/:username</pre></p>      
         </div>
       </div>
