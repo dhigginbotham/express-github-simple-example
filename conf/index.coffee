@@ -21,12 +21,12 @@ conf = ->
   # @param  {host}  String  app url
   # @param  {port}  Number  app port
   # @param  {uploadDir}  String  default upload dir -we assume our 
-  @app.title = "laserstingray-angular"
-  @app.initials = "lsba"
-  @app.port = 3003
-  @app.host = if process.env.NODE_ENV == "development" then "http://localhost:" + @app.port else "http://#{@app.initials}.nodejitsu.com"
+  @app.title = "express-github-simple-example"
+  @app.initials = "gitresume"
+  @app.port = if process.env.NODE_ENV == "production" then process.env.port else 3003
+  @app.host = if process.env.NODE_ENV == "development" then "http://localhost:" + @app.port else "http://#{@app.initials}.jit.su"
   @app.uploadDir = if process.env.NODE_ENV == "development" then "public\\uploads\\" else "public/uploads/"
-  @app.welcome = "#{@app.title} server listening on port #{@app.port} in #{process.env.NODE_ENV} mode" if process.env.NODE_ENV == "development"
+  @app.welcome = "#{@app.title} server listening on port #{@app.port} in #{process.env.NODE_ENV} mode"
 
   # cookie settings:
   # this is a bit faster than redis when redis is not local to the 
@@ -43,7 +43,7 @@ conf = ->
 
   # @param  {init}  Boolean  set this to true to create an admin account
   # @param  {password}  String  default password for the app
-  @seed.init = false
+  @seed.init = true
   @seed.password = if process.env.NODE_PASS? then process.env.NODE_PASS else "super-secret-passw0rd"
 
   # users settings:
@@ -53,7 +53,7 @@ conf = ->
 
   # db settings:
 
-  @db.mongoUrl = process.env.MONGO_DB_STRING or "mongodb://localhost/#{@app.initials}"
+  @db.mongoUrl = if process.env.NODE_ENV == "production" then process.env.MONGO_DB_STRING else "mongodb://localhost/#{@app.initials}"
 
   # debug setting for app specific modules:
 
@@ -89,6 +89,10 @@ conf = ->
   @pass.fb.route = "/auth/facebook/callback" # this should match the route in your routes
   @pass.fb.secret = if process.env.NODE_ENV == "production" then "c7a2a0d87a773103c017eea7fd4cb06a" 
   else "47436dae949615733ac56357b5572d45"
+
+  @github = {}
+  @github.username = "dhigginbotham"
+  @github.token = process.env.GITHUB_OAUTH_TOKEN || null
 
 # colors prototype - big thanks to the npm module colors, i didnt
 # feel like i needed a bunch of colors so I borrowed a few. :)
@@ -155,7 +159,7 @@ conf::cache = (options) ->
   @cache.session.filename = if @cache.session.filename? then @cache.session.filename else "./lib/cache/db/session.nedb.db"
 
   @cache.db = if options.db? then options.db else {}
-  @cache.db.mongoUrl = if @cache.db.mongoUrl? then @cache.db.mongoUrl else @cache.db.mongoUrl
+  @cache.db.mongoUrl = @db.mongoUrl
   @cache.db.interval = if @cache.db.interval? then @cache.db.interval else 1200000
 
   @cache.cookie = if options.cookie? then options.cookie else {}

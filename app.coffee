@@ -43,7 +43,7 @@ restify = require "express-restify-mongoose"
 User = require "./models/users"
 
 # default application configuration
-app.set "port", process.env.port || conf.app.port
+app.set "port", process.env.port || 80
 app.use express.logger "dev"
 app.use express.compress()
 app.use express.errorHandler()
@@ -63,7 +63,6 @@ app.use express.static path.join __dirname, "public"
 
 restify.serve app, User,
   prefix: "/api"
-  select: "-password"
 
 app.use cache
 
@@ -93,7 +92,7 @@ app.use "/github", github
 #     err: err
 
 # go!
-server.listen conf.app.port, () ->
+server.listen app.get("port"), () ->
   col = conf.colors()
   console.log "#{col.cyan}::#{col.reset} starting engine #{col.cyan}::#{col.reset} #{conf.app.welcome} #{col.cyan}::#{col.reset} "
 

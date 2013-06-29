@@ -5,8 +5,7 @@ flash = require "connect-flash"
 fs = require "fs"
 path = require "path"
 
-mid = require "./middleware"
-middle = new mid("dhigginbotham")
+middle = require "./middleware"
 routes = require "./routes"
 
 scripts = require "../../lib/assets"

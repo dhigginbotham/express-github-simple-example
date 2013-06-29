@@ -2,6 +2,7 @@ request = require "request"
 _ = require "underscore"
 
 helpers = require "../../conf/helpers"
+conf = require "../../conf"
 ds = require "../cache/nedb"
 
 ### Surf github API ###
@@ -11,7 +12,7 @@ Github = (opts) ->
   if typeof opts == "undefined" then opts = {}
   
   # pass through an api token, or use the default
-  @access_token = if opts.access_token? then opts.access_token else process.env.GITHUB_OAUTH_TOKEN
+  @access_token = if opts.access_token? then opts.access_token else conf.github.token
   @path = if opts.url? then opts.url else "https://api.github.com"
 
   return if not @access_token? then new Error "You must have a valid Github OAuth Token to use this API"
@@ -108,7 +109,7 @@ getResponse = (req, options, fn) ->
     options = {}
 
   git = new Github()
-  git.setUser (if options.user? then options.user else null), false
+  git.setUser (if options.user? then options.user else conf.github.username), false
   git.apiPath if options.path? then options.path else ""
   git.paging req.query.page || 1
 

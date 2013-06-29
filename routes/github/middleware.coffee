@@ -1,15 +1,12 @@
-middle = (user) ->
-  @user = user
-
-  @
-
 md = require("node-markdown").Markdown
 
 ds = require "../../lib/cache/nedb"
 Github = require("../../lib/github").Github
 request = require("../../lib/github").request
 
-middle::dynamic = (req, res, next) ->
+middle = {}
+
+middle.dynamic = (req, res, next) ->
 
   path = req.url
 
@@ -39,44 +36,49 @@ middle::dynamic = (req, res, next) ->
           req.Github = github
           next()
 
-middle::handleFileStream = (req, res, next) ->
-
+middle.handleFileStream = (req, res, next) ->
   if req.Github? then stream = req.Github.content
   req.GithubStream = stream
   next()
 
-middle::getUserInfo = (req, res, next) ->
-  request req, path: "", user: @user, (err, git) ->
+middle.getUserInfo = (req, res, next) ->
+
+  request req, {path: "", user: "dhigginbotham"}, (err, git) ->
     return if err? then next err, null
     req.getUserInfo = git
     return next null, git
 
-middle::getUserRepos = (req, res, next) ->
-  request req, path: "/repos", user: @user, (err, git) ->
+middle.getUserRepos = (req, res, next) ->
+  
+  request req, {path: "/repos", user: "dhigginbotham"}, (err, git) ->
     return if err? then next err, null
     req.getUserRepos = git
     return next null, git
 
-middle::getUsersRepos = (req, res, next) ->
-  request req, path: "/repos", user: req.params.user, (err, git) ->
+middle.getUsersRepos = (req, res, next) ->
+  
+  request req, {path: "/repos", user: req.params.user}, (err, git) ->
     return if err? then next err, null
     req.getUsersRepos = git
     return next null, git
 
-middle::getUserFollowers = (req, res, next) ->
-  request req, path: "/followers", user: @user, (err, git) ->
+middle.getUserFollowers = (req, res, next) ->
+  
+  request req, {path: "/followers", user: "dhigginbotham"}, (err, git) ->
     return if err? then next err, null
     req.getUserFollowers = git
     return next null, git
 
-middle::getUserFollowing = (req, res, next) ->
-  request req, path: "/following", user: @user, (err, git) ->
+middle.getUserFollowing = (req, res, next) ->
+  
+  request req, {path: "/following", user: "dhigginbotham"}, (err, git) ->
     return if err? then next err, null
     req.getUserFollowing = git
     return next null, git
 
-middle::getStars = (req, res, next) ->
-  request req, path: "/starred", user: @user, (err, git) ->
+middle.getStars = (req, res, next) ->
+
+  request req, {path: "/starred", user: "dhigginbotham"}, (err, git) ->
     return if err? then next err, null
     req.getStars = git
     return next null, git
