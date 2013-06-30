@@ -37,8 +37,20 @@
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </p>
       <br>
+
     <div class="marketing">
       <div class="row-fluid">
+        <div class="span6">
+          {{> parts/coderbits/top.lang}}     
+        </div>
+        <div class="span6">
+          {{> parts/coderbits/top.skills}}     
+        </div>
+        </div>
+        <div class="row-fluid">
+        <div class="span6">
+          {{> parts/coderbits/top.traits}}     
+        </div>
         <div class="span6">
           <legend><i class="icon-rocket" style="color: rgb(221, 221, 221); font-size: 30px;"></i> Easy Setup</legend>
           <p>If you're trying to change the default user: <pre class="prettyprint">checkout /conf/index.coffee</pre></p>

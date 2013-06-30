@@ -8,7 +8,7 @@ path = require "path"
 middle = require "../../lib/github/middleware"
 routes = require "./routes"
 
-
+coderbits = require "../../lib/coderbits"
 
 scripts = require "../../lib/assets"
 nav = require "../../lib/menus"
@@ -21,4 +21,4 @@ app.set "view engine", "mmm"
 app.set "layout", "layout"
 
 # default or home route
-app.get "/", nav.render, scripts.embed, middle.getUserInfo, routes.homePage
+app.get "/", nav.render, scripts.embed, middle.getUserInfo, coderbits.middleware, routes.homePage

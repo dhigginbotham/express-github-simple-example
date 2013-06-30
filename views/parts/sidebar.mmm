@@ -15,3 +15,6 @@
     <li><a href="/github/followers"><i class="icon-star"></i> Followers: {{followers}}</a></li>
     <li><a href="/github/following"><i class="icon-thumbs-up"></i> Following: {{following}}</a></li>
   </ul>
+
+  <hr>
+

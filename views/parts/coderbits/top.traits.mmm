@@ -1,0 +1,22 @@
+  {{#coderbits.cache}}
+  <legend><i class="icon-certificate" style="color: rgb(221, 221, 221); font-size: 30px;"></i> Top Traits</legend>
+  <div  style="text-align: center;"><canvas id="top_traits" height="300" width="300"></canvas></div>
+  <script>
+    var data = [];
+    var colors = ["#906B58", "#F4DFC0", "#2A4F61","#4C8193", "#58A5C1"];
+    var labels = [];
+    var count = [];
+    {{#coderbits.cache.top_traits}}
+    count.push({{count}});
+    labels.push("{{name}}");
+    {{/coderbits.cache.top_traits}}
+
+    for (var i=0;i<count.length;++i) {
+      data.push({value: count[i], color: colors[i], label: labels[i], labelColor: "white", labelFontSize: "0", labelAlign: "right"});
+    }
+
+
+  var topTraits = new Chart(document.getElementById("top_traits").getContext("2d")).Doughnut(data);
+
+  </script>
+  {{/coderbits.cache}} 

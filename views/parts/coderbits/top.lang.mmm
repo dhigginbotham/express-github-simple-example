@@ -1,0 +1,22 @@
+  {{#coderbits.cache}}
+  <legend><i class="icon-code" style="color: rgb(221, 221, 221); font-size: 30px;"></i> Top Languages</legend>
+  <div  style="text-align: center;"><canvas id="top_lang" height="300" width="300"></canvas></div>
+  <script>
+    var data = [];
+    var colors = ["#3a87ad", "#DA4F49", "#49AFCD","#F5A932", "#5BB75B"];
+    var labels = [];
+    var count = [];
+    {{#coderbits.cache.top_languages}}
+    count.push({{count}});
+    labels.push("{{name}}");
+    {{/coderbits.cache.top_languages}}
+
+    for (var i=0;i<count.length;++i) {
+      data.push({value: count[i], color: colors[i], label: labels[i], labelColor: "white", labelFontSize: "0", labelAlign: "right"});
+    }
+
+
+  var topLang = new Chart(document.getElementById("top_lang").getContext("2d")).Doughnut(data);
+
+  </script>
+  {{/coderbits.cache}} 

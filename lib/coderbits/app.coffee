@@ -11,8 +11,6 @@ scripts = require "../assets"
 nav = require "../menus"
 conf = require "../../conf"
 
-github = require "../github"
-
 _views = path.join __dirname, "..", "..", "views"
 
 app.set "views", _views

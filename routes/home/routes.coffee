@@ -9,5 +9,6 @@ routes.homePage = (req, res) ->
   user: req.user
   github: req.Github
   gitUser: req.getUserInfo
+  coderbits: req.Coderbits
 
 module.exports = routes
