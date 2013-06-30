@@ -15,7 +15,9 @@
   <div class="container">
     <hr>
     <footer class="clearfix">
-      <p>Copyright 2013, MIT <a href="/">@dhigginbotham</a></p>
+      <p class="muted small pull-right"><i class="icon-heart" style="color:#DA4F49;"></i> 
+        Thanks to <a target="_blank" href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a>, <a target="_blank" href="http://expressjs.com/">Express.js</a>, <a target="_blank" href="http://coffeescript.org/">CoffeeScript</a>, <a target="_blank" href="http://mongoosejs.com/">Mongoose</a>, <a target="_blank" href="https://github.com/louischatriot/nedb">neDb</a>, <a target="_blank" href="fortawesome.github.io/Font-Awesome/">Font-Awesome</a>, <a target="_blank" href="http://chartjs.com">ChartJS</a>, <a target="_blank" href="http://www.github.com">Github API</a>, <a target="_blank" href="http://coderbits.com">Coderbits</a>
+      </p>
     </footer>
   </div>
   {{> parts/assets/footer-scripts}}

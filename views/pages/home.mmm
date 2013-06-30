@@ -57,7 +57,9 @@
         </div>
         <div class="span6">
           <legend><i class="icon-code" style="color: rgb(221, 221, 221); font-size: 30px;"></i> View Other Repos/Stars</legend>
-          <p>easily use the server to do <pre class="prettyprint">/repos/:username or /starred/:username</pre></p>      
+          <p>easily use the server to do <pre class="prettyprint">/repos/:username or /starred/:username</pre></p>
+          <hr>
+          <p class="muted"><i class="icon-github"></i> <a href="https://github.com/dhigginbotham/express-github-simple-example">View Github Repository</a></p>
         </div>
       </div>
     </div>
