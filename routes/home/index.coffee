@@ -21,4 +21,4 @@ app.set "view engine", "mmm"
 app.set "layout", "layout"
 
 # default or home route
-app.get "/", nav.render, scripts.embed, middle.getUserInfo, coderbits.middleware, routes.homePage
+app.get "/", nav.render, scripts.embed, middle.getUserInfo, middle.eventStream, coderbits.middleware, routes.homePage

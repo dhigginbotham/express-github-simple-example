@@ -99,7 +99,21 @@ middle.scan = (req, res, next) ->
       template.push {name: key, amount: val, repo: git.page}
 
     req.scan = template
-    console.log req.scan
+    return next null, git
+
+middle.github = (req, res, next) ->
+
+  request req, {path: req.url, user: false}, (err, api) ->
+    return if err? then next err, null
+
+    req.GithubApi = api
+    return next null, api
+
+middle.eventStream = (req, res, next) ->
+
+  request req, {path: "/users/dhigginbotham/events/public", user: false}, (err, git) ->
+    return if err? then next err, null
+    req.GithubApi = git
     return next null, git
 
 module.exports = middle

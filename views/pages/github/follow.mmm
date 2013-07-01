@@ -17,7 +17,7 @@
       
     </div>
     <div class="span9">
-
+      <legend>View {{pageTitle}}</legend>
       <ul class="thumbnails">
       {{#gitView.cache}}
         <li class="span3">

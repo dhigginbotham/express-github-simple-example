@@ -30,6 +30,7 @@ routes.follow = (req, res) ->
   user: req.user
   gitView: req.getUserFollowers || req.getUserFollowing
   gitUser: req.getUserInfo
+  pageTitle: if req.path == "/following" then "watching these users" else "whose watching me"
 
 routes.admin = (req, res) ->
   res.render "pages/github/admin",
