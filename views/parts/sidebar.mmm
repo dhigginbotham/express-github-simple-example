@@ -9,6 +9,8 @@
     <li><a href="{{html_url}}">Hireable: {{#hireable}} <span class="label label-success"><i class="icon-smile"></i> Indeed</span>{{/hireable}}{{^hireable}} <span class="label label-inverse">Not currently</span>{{/hireable}}</a></li>
   </ul>
   
+  <hr>
+  
   <ul class="nav nav-list">
     <li class="nav-header">Github Stats</li>
     <li><a href="/github/repos"><i class="icon-code-fork"></i> Public Repos: {{public_repos}}</a></li>
@@ -17,4 +19,12 @@
   </ul>
 
   <hr>
-  
+
+  <ul class="nav nav-list">
+    <li class="nav-header">Skills &amp; Talents</li>
+    <li><a href="#"><i class="icon-code"></i> Top Languages</a></li>
+    <li><a href="#"><i class="icon-code-fork"></i> Top Skills</a></li>
+    <li><a href="#"><i class="icon-certificate"></i> Top Traits</a></li>
+  </ul>
+
+  <hr>
