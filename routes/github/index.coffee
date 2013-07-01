@@ -20,7 +20,7 @@ app.set "views", _views
 app.set "view engine", "mmm"
 app.set "layout", "layout"
 
-app.get "/users/:user/events/:privacy", nav.render, scripts.embed, middle.github, routes.github
+app.get "/users/:user/events/:privacy", nav.render, scripts.embed, middle.getUserInfo, middle.github, routes.github
 
 # default or home route
 app.get "/", (req, res) ->

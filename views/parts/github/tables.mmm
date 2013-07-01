@@ -1,0 +1,47 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Repositories</th>
+      <th>Author</th>
+      <th><i class="icon-code"></i> Language</th>
+      <th><i class="icon-code-fork"></i> Forks</th>
+      <th><i class="icon-star"></i> Stars</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    {{#gitTables.cache}}
+    <tr>
+      <td><h4><a target="_blank" href="{{html_url}}"><i class="icon-github"></i> {{name}}</a></h4></td>
+      <td><a target="_blank" href="{{owner.url}}" title="{{owner.login}}"><p><img src="{{owner.avatar_url}}" width="24px" alt="{{owner.login}}" class="img-circle"> {{owner.login}}</p></a></td>
+      <td>{{language}}</td>
+      <td><a target="_blank" href="{{html_url}}" class="btn btn-block btn-primary"><i class="icon-code-fork"></i> {{forks}}</a></td>
+      <td><a target="_blank" href="{{html_url}}" class="btn btn-block btn-info"><i class="icon-star"></i> {{watchers}}</a></td>
+    </tr>
+    <tr>
+      <td colspan="5">
+        {{#description}}
+        <blockquote>
+          {{description}}
+        </blockquote>
+        {{/description}}
+        <pre class="prettyprint">git clone {{clone_url}}</pre>
+      </td>
+    </tr>
+    {{/gitTables.cache}}
+
+  </tbody>
+  {{#gitTables.paginate}}
+  <tfoot>
+    <tr>
+      <th colspan="5">
+        <ul class="pager">
+          {{^isFirst}}<li><a href="?page={{previous}}">Previous</a></li>{{/isFirst}}
+          {{^isLast}}<li><a href="?page={{next}}">Next</a></li>{{/isLast}}
+        </ul>
+      </th>
+    </tr>
+  </tfoot>
+  {{/gitTables.paginate}}
+
+</table>      

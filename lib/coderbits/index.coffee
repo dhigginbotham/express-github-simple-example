@@ -30,7 +30,7 @@ Coderbits::request = (options, fn) ->
 
     switch resp.statusCode
       when 200 then fn null, body if body
-      else fn JSON.stringify err: "Unhandled response code from Coderbits API", code: resp.statusCode, null
+      else fn JSON.stringify {code: resp.statusCode, error: msg.message}, null
 
 HandleResp = (req, options, fn) ->
   

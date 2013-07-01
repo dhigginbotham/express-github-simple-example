@@ -10,6 +10,7 @@ routes.github = (req, res) ->
   gitTables: req.getStars || req.getUserRepos || req.getUsersRepos
   gitScan: req.scan || false
   gitUser: req.getUserInfo
+  eventStream: req.GithubApi
 
 routes.scan = (req, res) ->
   res.render "pages/github/tags",

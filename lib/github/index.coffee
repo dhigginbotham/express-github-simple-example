@@ -58,10 +58,11 @@ Github::request = (options, fn) ->
 
   request options, (err, resp, body) ->
     return if err? then fn err, null
+    msg = JSON.parse body
 
     switch resp.statusCode
       when 200 then fn null, body if body
-      else fn JSON.stringify err: "Unhandled response code from Github API", code: resp.statusCode, null
+      else fn JSON.stringify {code: resp.statusCode, error: msg.message}, null
 
 getResponse = (req, options, fn) ->
   

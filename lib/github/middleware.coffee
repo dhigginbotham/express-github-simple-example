@@ -105,7 +105,6 @@ middle.github = (req, res, next) ->
 
   request req, {path: req.url, user: false}, (err, api) ->
     return if err? then next err, null
-
     req.GithubApi = api
     return next null, api
 

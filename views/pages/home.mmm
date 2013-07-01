@@ -27,32 +27,7 @@
       <a class="label label-info" href="/github/starred"><i class="icon-star"></i> Own Starred</a> 
       <a class="label label-info" href="/github/starred/visionmedia"><i class="icon-star"></i> User Starred</a> 
     </div>
-    <legend>Commit History</legend>
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>User</th>
-          <th>Repo</th>
-          <th>Time</th>
-          <th>Type</th>
-        </tr>
-      </thead>
-      <tbody>
-      {{#eventStream.cache}}
-        <tr>
-          <td><img src="http://www.gravatar.com/avatar/{{actor.gravatar_id}}?s=20" alt="{{actor.login}}" class="img-rounded"> {{actor.login}}</td>
-          <td><a target="_blank" href="http://github.com/{{repo.name}}"> {{repo.name}}</a></td>
-          <td>{{created_at}}</td>
-          <td>{{type}}</td>
-        </tr>
-      {{/eventStream.cache}}
-      </tbody>
-      <tfoot>
-        <tr>
-          <td colspan="4">End of Stream</td>
-        </tr>
-      </tfoot>
-    </table>
+
     <div class="row-fluid">
       <div class="span6">
         {{> parts/coderbits/top.lang}}     
