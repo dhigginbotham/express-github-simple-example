@@ -1,30 +1,43 @@
   <img src="http://www.gravatar.com/avatar/{{gravatar_id}}?s=300" alt="{{login}}" class="img-rounded">
   <hr>
-  <h4>{{name}}</h4>
-  <h5 class="muted"><a href="{{html_url}}">@{{login}}</a></h5>
+  <h4 class="muted"><a href="{{html_url}}">{{name}}</a></h4>
 
   <ul class="nav nav-list">
     <li class="nav-header">Personal Info</li>
     <li><a href="{{html_url}}"><i class="icon-globe"></i> Location: {{location}}</a></li>
     <li><a href="{{html_url}}">Hireable: {{#hireable}} <span class="label label-success"><i class="icon-smile"></i> Indeed</span>{{/hireable}}{{^hireable}} <span class="label label-inverse">Not currently</span>{{/hireable}}</a></li>
   </ul>
-  
+
   <hr>
   
+  <h4 class="muted"><a href="{{html_url}}">Github Stats</a></h4>
   <ul class="nav nav-list">
-    <li class="nav-header">Github Stats</li>
+    <li><i class="icon-date"></i> Joined: {{created_at}}</li>
+    <li class="nav-header">Repo Stats</li>
     <li><a href="/github/repos"><i class="icon-code-fork"></i> Public Repos: {{public_repos}}</a></li>
+    <li><a href="/github/users/dhigginbotham/events/public"><i class="icon-refresh"></i> Events Stream</a></li>
+    <li class="nav-header">Friends &amp; Followers</li>
     <li><a href="/github/followers"><i class="icon-star"></i> Followers: {{followers}}</a></li>
     <li><a href="/github/following"><i class="icon-thumbs-up"></i> Following: {{following}}</a></li>
   </ul>
 
+  {{#coderbits}}
   <hr>
-
+  <h4 class="muted"><a href="{{cache.link}}">Coderbits Stats</a></h4>
   <ul class="nav nav-list">
-    <li class="nav-header">Skills &amp; Talents</li>
-    <li><a href="#"><i class="icon-code"></i> Top Languages</a></li>
-    <li><a href="#"><i class="icon-code-fork"></i> Top Skills</a></li>
-    <li><a href="#"><i class="icon-certificate"></i> Top Traits</a></li>
+    {{#coderbits.cache}}
+      <li class="nav-header">Top Traits</li>
+      {{#top_traits}}
+      <li><a href="#">{{name}}</a></li>
+      {{/top_traits}}    
+    <li class="nav-header">Top Languages</li>
+      {{#top_languages}}
+      <li><a href="#">{{name}}</a></li>
+      {{/top_languages}}
+      <li class="nav-header">Top Skills</li>
+      {{#top_skills}}
+      <li><a href="#">{{name}}</a></li>
+      {{/top_skills}}    
+    {{/coderbits.cache}}
   </ul>
-
-  <hr>
+  {{/coderbits}}
